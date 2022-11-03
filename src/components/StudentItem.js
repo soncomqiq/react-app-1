@@ -1,6 +1,8 @@
+import "./StudentItem.css";
+
 function StudentItem() {
   return (
-      <div>
+      <div className="StudentItem">
         <div>Nuttachai</div>
         <div>Kulthammanit</div>
         <div>26</div>
