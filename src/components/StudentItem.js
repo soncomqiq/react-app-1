@@ -1,15 +1,12 @@
 import "./StudentItem.css";
 
-function StudentItem() {
-  const name = "Nuttachai";
-  const surname = "Kulthammanit";
-  const age = 26;
+function StudentItem(props) {
 
   return (
       <div className="StudentItem">
-        <div>{name}</div>
-        <div>{surname}</div>
-        <div>{age}</div>
+        <div>{props.name}</div>
+        <div>{props.surname}</div>
+        <div>{props.age}</div>
       </div>
   )
 }
