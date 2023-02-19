@@ -21,6 +21,10 @@ function App() {
       age: 59
     }
   ]
+  let statusText = "Available";
+  const clickEventHandler = () => {
+    console.log("Clicked")
+  }
 
   return (
       <div className="App">
@@ -30,6 +34,8 @@ function App() {
         <StudentItem name={studentList[1].name} surname={studentList[1].surname} age={studentList[1].age}></StudentItem>
         <StudentItem name={studentList[2].name} surname={studentList[2].surname} age={studentList[2].age}></StudentItem>
         <StudentItem name={studentList[3].name} surname={studentList[3].surname} age={studentList[3].age}></StudentItem>
+        <h3>Status: {statusText}</h3>
+        <button onClick={clickEventHandler}>Click me</button>
       </div>
   );
 }
