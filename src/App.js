@@ -23,7 +23,8 @@ function App() {
   ]
   let statusText = "Available";
   const clickEventHandler = () => {
-    console.log("Clicked")
+    statusText = "Busy";
+    console.log("statusText: ", statusText)
   }
 
   return (
