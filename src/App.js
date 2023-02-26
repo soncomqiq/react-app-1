@@ -1,6 +1,7 @@
 import './App.css';
 import StudentItem from "./components/StudentItem";
 import {useState} from "react";
+import NewStudentItem from "./components/NewStudentItem";
 
 function App() {
   const studentList = [
@@ -31,8 +32,7 @@ function App() {
 
   return (
       <div className="App">
-        <h2>This is React Application</h2>
-        <p>Let's get started!</p>
+        <NewStudentItem/>
         <StudentItem name={studentList[0].name} surname={studentList[0].surname} age={studentList[0].age}></StudentItem>
         <StudentItem name={studentList[1].name} surname={studentList[1].surname} age={studentList[1].age}></StudentItem>
         <StudentItem name={studentList[2].name} surname={studentList[2].surname} age={studentList[2].age}></StudentItem>
