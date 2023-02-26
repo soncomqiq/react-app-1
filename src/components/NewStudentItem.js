@@ -16,8 +16,19 @@ const NewStudentItem = () => {
     setCurrentAge(event.target.value)
   }
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const newStudent = {
+      name: currentName,
+      surname: currentLastName,
+      age: Number(currentAge)
+    }
+
+    console.log(newStudent);
+  }
+
   return (
-      <form>
+      <form onSubmit={submitHandler}>
         <div>
           <div className="StudentInput">
             <label>Name</label>
@@ -33,7 +44,7 @@ const NewStudentItem = () => {
           </div>
         </div>
         <div className="SubmitButton">
-          <button>Add Student</button>
+          <button type="submit">Add Student</button>
         </div>
       </form>
   )
