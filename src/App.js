@@ -30,9 +30,17 @@ function App() {
     console.log("status: ", status)
   }
 
+  const addStudentHandler = (newStudentData) => {
+    const newStudent = {
+      ...newStudentData,
+      id: Math.random().toString()
+    }
+    console.log(newStudent)
+  }
+
   return (
       <div className="App">
-        <NewStudentItem/>
+        <NewStudentItem onAddStudent={addStudentHandler} />
         <StudentItem name={studentList[0].name} surname={studentList[0].surname} age={studentList[0].age}></StudentItem>
         <StudentItem name={studentList[1].name} surname={studentList[1].surname} age={studentList[1].age}></StudentItem>
         <StudentItem name={studentList[2].name} surname={studentList[2].surname} age={studentList[2].age}></StudentItem>

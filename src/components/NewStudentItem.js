@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import "./NewStudentItem.css"
 
-const NewStudentItem = () => {
+const NewStudentItem = (props) => {
   const [currentName, setCurrentName] = useState('');
   const [currentLastName, setCurrentLastName] = useState('');
   const [currentAge, setCurrentAge] = useState('');
@@ -24,7 +25,11 @@ const NewStudentItem = () => {
       age: Number(currentAge)
     }
 
-    console.log(newStudent);
+    props.onAddStudent(newStudent)
+
+    setCurrentName("")
+    setCurrentLastName("")
+    setCurrentAge("")
   }
 
   return (
@@ -32,15 +37,15 @@ const NewStudentItem = () => {
         <div>
           <div className="StudentInput">
             <label>Name</label>
-            <input type="text" onChange={nameChangeHandler}/>
+            <input type="text" onChange={nameChangeHandler} value={currentName}/>
           </div>
           <div className="StudentInput">
             <label>Lastname</label>
-            <input type="text" onChange={lastNameChangeHandler}/>
+            <input type="text" onChange={lastNameChangeHandler} value={currentLastName}/>
           </div>
           <div className="StudentInput">
             <label>Age</label>
-            <input type="number" min="1" max="99" step="1" onChange={ageChangeHandler}/>
+            <input type="number" min="1" max="99" step="1" onChange={ageChangeHandler} value={currentAge}/>
           </div>
         </div>
         <div className="SubmitButton">
